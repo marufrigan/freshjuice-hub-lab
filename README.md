@@ -143,17 +143,13 @@ ifconfig
 Example:
 
 192.168.1.150
-🛠 Task 4 — Nmap Scan
+
+**🛠 Task 4 — Nmap Scan**
 From Kali:
 
-
 nmap -sV -sC -p 8080 192.168.1.150
-Answer:
-What service is running?
-What version of Python is detected?
-What ports are open?
 
-🛠 Task 5 — Directory Enumeration (Gobuster)
+**🛠 Task 5 — Directory Enumeration (Gobuster)**
 
 gobuster dir -u http://192.168.1.150:8080 -w /usr/share/wordlists/dirb/common.txt
 Find:
@@ -162,7 +158,7 @@ Sensitive files
 Developer paths
 Explain why directory enumeration is dangerous for real companies.
 
-🕵️‍♂️ 5. Part C — Safe Reverse-Shell Callback Simulation
+**🕵️‍♂️ 5. Part C — Safe Reverse-Shell Callback Simulation**
 This simulation demonstrates how malware communicates with attackers.
 No real malware is used.
 
@@ -202,7 +198,7 @@ By completing this lab, you will understand:
 
 ✔ Defensive strategies
 
-🧠 7. Safety Notice
+** 7. Safety Notice**
 This project is 100% safe.
 It contains:
 
@@ -215,6 +211,7 @@ Only educational simulations
 Use only in controlled environments for ethical learning.
 
 👤 Credits
-Developed by Maruf Farhan
+
+Developed by **Maruf Farhan**
 For cybersecurity education and awareness.
 
