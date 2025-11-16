@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FreshJuice Hub – Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">Fresh<span>Juice</span> Hub</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="order.html">Order</a>
+            <a href="deals.html">Deals</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>100% Organic. 0% Security Awareness.</h1>
+            <p>Welcome to FreshJuice Hub – a totally “normal” juice shop that an attacker might use to trick users.</p>
+            <p class="warning-text">
+                This site is for <strong>education only</strong>. Do not trust random downloads in the real world.
+            </p>
+        </div>
+        <div class="hero-box">
+            <h2>Special Offer</h2>
+            <p>Download our “Free Discount Coupon App” and get 70% off!</p>
+            <a class="download-btn" href="files/malware.zip">Download Now</a>
+            <p class="tiny-text">(In a real attack, this could be malware.)</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>Popular Juices</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>Red Berry Blast</h3>
+                <p>Strawberry, raspberry, and a splash of lime.</p>
+                <span class="price">£4.99</span>
+            </div>
+            <div class="product-card">
+                <h3>Green Detox</h3>
+                <p>Spinach, apple, cucumber, and ginger.</p>
+                <span class="price">£5.49</span>
+            </div>
+            <div class="product-card">
+                <h3>Mango Sunrise</h3>
+                <p>Mango, orange, and pineapple goodness.</p>
+                <span class="price">£5.99</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login area with safe phishing simulation -->
+    <section class="login-section">
+        <div class="login-card">
+            <h2>Customer Login</h2>
+            <p>Attackers often add fake login forms to steal usernames and passwords.</p>
+
+            <form id="phishing-form">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="user@example.com" required>
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="********" required>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <p class="tiny-text">
+                This is a <strong>training simulation</strong>. Do not enter real credentials here.
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>FreshJuice Hub &copy; 2025 – Training Lab Only | Do not use for real shopping.</p>
+    </footer>
+
+    <!-- SAFE LOGIN SIMULATION SCRIPT -->
+    <script>
+        const form = document.getElementById('phishing-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // prevent real submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Safe "attacker view" in browser only
+            console.log('--- Phishing Simulation ---');
+            console.log('Captured email:', email);
+            console.log('Captured password:', password);
+            console.log('In a real phishing attack, this data would be sent to a hacker.');
+
+            alert(
+                'Phishing Simulation Only\n\n' +
+                'If this were a real malicious site, your email and password\n' +
+                'would now be sent to an attacker.\n\n' +
+                'This is a safe educational demo. NEVER enter real passwords\n' +
+                'on unknown websites.'
+            );
+
+            form.reset(); // clear form
+        });
+    </script>
+
+</body>
+</html>
