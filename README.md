@@ -1,16 +1,20 @@
-FreshJuice Hub — Cybersecurity Awareness Pentesting Lab
-A safe, beginner-friendly pentesting lab designed for teaching phishing, malware awareness, website reconnaissance, and reverse-shell simulation.
-This lab helps students understand:
-How attackers trick users with fake websites
-How phishing pages look in the real world
-How downloading random ZIP files leads to compromise
-How to analyze a suspicious website
-How to perform Nmap & Gobuster scanning
-How malware callbacks / reverse shells work (safe simulation)
-This project is 100% safe — there is NO real malware.
-Everything is simulated for educational purposes.
+# 🍊 FreshJuice Hub — Cybersecurity Awareness Pentesting Lab
 
-Project Structure
+A safe, beginner-friendly penetration testing lab designed for teaching:
+
+- Phishing awareness  
+- Fake website analysis  
+- Reconnaissance (Nmap, Gobuster)  
+- Malware awareness  
+- Reverse-shell callback simulation (safe)  
+
+This project is **100% safe** — there is **NO real malware**.  
+Everything is simulated for educational purposes only.
+
+---
+
+# 📁 Project Structure
+
 freshjuice-hub-lab/
 │── index.html
 │── shop.html
@@ -20,216 +24,220 @@ freshjuice-hub-lab/
 │── style.css
 │
 └── files/
-    ├── malware.zip     (Safe ZIP for demonstration)
-    └── malware.txt     (Explains how malware spreads)
+├── malware.zip (Safe ZIP for demo)
+└── malware.txt (Explains malware behaviour)
 
-🧑‍🏫 1. Overview for Students
+yaml
+Copy code
 
-Welcome to the FreshJuice Hub Pentesting Lab.
+---
 
-This is your practice environment where you will learn:
+# 🎓 1. Overview for Students
 
-✔️ How fake websites trick users
-✔️ How phishing pages steal credentials
-✔️ How websites can be hosted locally
-✔️ How to perform reconnaissance on a target
-✔️ How malware callbacks simulate reverse-shells
-✔️ How to protect yourself from these attacks
+Welcome to the **FreshJuice Hub Pentesting Lab**.
 
-2. How to Run This Lab (Windows / Mac / Linux)
-Step 1 — Download the Lab
-Option A (Recommended):
+In this lab, you will learn:
+
+- ✔ How fake websites trick users  
+- ✔ How phishing login pages steal credentials  
+- ✔ How websites can be hosted locally  
+- ✔ How attackers perform website reconnaissance  
+- ✔ How downloading files can compromise a system  
+- ✔ How malware callbacks / reverse shells work (simulation only)  
+- ✔ How to protect yourself from these attacks  
+
+---
+
+# 🖥️ 2. How to Run This Lab (Windows / Mac / Linux)
+
+## **Step 1 — Download the Lab**
+
+### Option A (Recommended)
+```bash
 git clone https://github.com/marufrigan/freshjuice-hub-lab.git
-
-Option B:
+Option B
 Click Code → Download ZIP
-Extract on your computer
+
+Extract the ZIP
 
 Step 2 — Enter the Project Folder
+bash
+Copy code
 cd freshjuice-hub-lab
-
-Step 3 — Start the Web Server
+Step 3 — Start the Local Web Server
 Windows / Mac / Linux:
+bash
+Copy code
 python3 -m http.server 8080
+If Python is installed as python:
 
-If Python is installed as python, use:
-
+bash
+Copy code
 python -m http.server 8080
+Step 4 — Open Website in Your Browser
+Visit:
 
-Step 4 — Open the Website in Browser
-**http://localhost:8080**
+arduino
+Copy code
+http://localhost:8080
+You should now see the FreshJuice Hub fake website.
 
+🔎 3. Part A — Website Analysis Tasks
+🧪 Task 1: Explore the Website
+Review the following pages:
 
-Congratulations — your phishing website is now running!
+index.html (home page)
 
-🎯 3. Part A — Website Analysis Tasks
-📝 Task 1: Explore the fake website
+shop.html
 
-Look at:
+deals.html
 
-Product pages
+order.html
 
-Deals
+contact.html
 
-Discount button
+Fake login form
 
-Login page
-
-Download buttons
+Fake download button
 
 Write down:
 
-What looks “trustworthy”?
+What looks genuine?
 
 What looks suspicious?
 
-🔍 Task 2: Analyze the Fake Login Page
+Would an average user trust it?
 
-Enter test credentials:
+🧪 Task 2: Analyze the Fake Login Page
+Enter test credentials such as:
 
+bash
+Copy code
 test@example.com
 password123
+Discuss:
 
+Why phishing login forms are dangerous
 
-Explain:
+Signs of a suspicious login page
 
-How phishing pages steal credentials
+How attackers collect credentials
 
-What clues show it’s fake
+🧪 Task 3: Download the Fake Malware ZIP
+Inside files/malware.zip, open:
 
-Why users fall for it
+malware.txt
 
-📦 Task 3: Download the malware.zip
-
-Inside the ZIP, open malware.txt.
-
-It tells the story:
+This explains:
 
 How attackers hide malware
 
-How simply opening a file can be risky
+Why opening unknown files is dangerous
 
-Why awareness is important
+How reverse-shell callbacks occur in real attacks
 
-⚔️ 4. Part B — Attacker Reconnaissance (Using Kali Linux)
+⚔️ 4. Part B — Reconnaissance from Kali Linux (Attacker)
+Find the victim machine IP:
 
-Make sure your Windows/Mac system is running the fake website.
-
-Find your system IP:
-
-Windows:
+Windows
+cmd
+Copy code
 ipconfig
-
-Mac/Linux:
+Mac/Linux
+bash
+Copy code
 ifconfig
+Example:
 
-
-Example IP:
-
+Copy code
 192.168.1.150
-
-🔎 Task 4: Run Nmap Scan
-
+🛠 Task 4 — Nmap Scan
 From Kali:
 
+bash
+Copy code
 nmap -sV -sC -p 8080 192.168.1.150
-
-
 Answer:
 
 What service is running?
 
-What version of Python server?
+What version of Python is detected?
 
 What ports are open?
 
-🗂️ Task 5: Directory Enumeration with Gobuster
+🛠 Task 5 — Directory Enumeration (Gobuster)
+bash
+Copy code
 gobuster dir -u http://192.168.1.150:8080 -w /usr/share/wordlists/dirb/common.txt
-
-
 Find:
 
-Hidden directories
+Hidden pages
 
-Secret files
+Sensitive files
 
-Write reflections:
+Developer paths
 
-Why do attackers scan directories?
+Explain why directory enumeration is dangerous for real companies.
 
-Why is this dangerous for real companies?
+🕵️‍♂️ 5. Part C — Safe Reverse-Shell Callback Simulation
+This simulation demonstrates how malware communicates with attackers.
+No real malware is used.
 
-🕵️‍♂️ 5. Part C — Malware Callback Simulation (SAFE)
-
-This is the highlight of the lab.
-No real malware — just a reverse-shell demonstration.
-
-🧑‍💻 On Kali (Attacker): Start Listener
+👨‍💻 On Kali (Attacker): Start Listener
+bash
+Copy code
 nc -lvp 4444
+👨‍🎓 Simulate the “malware callback”
+Open a new terminal in Kali:
 
-
-You will see:
-
-listening on [any] 4444 ...
-
-🧑‍🎓 On Victim Machine (Simulated Callback)
-
-Open a second Kali terminal and send the callback:
-
+bash
+Copy code
 nc <kali-ip> 4444
-
-
 Example:
 
+bash
+Copy code
 nc 192.168.1.97 4444
+Now type:
 
-
-Now type commands:
-
+bash
+Copy code
 hello
 whoami
 ls
 pwd
+These commands appear on the listener — showing how attackers gain remote access.
 
+🛡 6. Learning Outcomes
+By completing this lab, you will understand:
 
-These commands appear on attacker terminal — just like a real compromise.
+✔ Phishing techniques
 
-Learning Outcome
+✔ Fake website indicators
 
-Students learn:
+✔ Website recon (Nmap, Gobuster)
 
-How opening files triggers malicious connections
+✔ Social engineering risks
 
-How reverse shells work
+✔ Malware infection chain
 
-Why network monitoring matters
+✔ Reverse-shell behavior
 
-How attackers interact with a compromised device
+✔ Defensive strategies
 
-🔐 6. Safety Notice
+🧠 7. Safety Notice
+This project is 100% safe.
+It contains:
 
-This project is 100% safe: No real malware
+No real malware
 
-No dangerous scripts. No automation
+No harmful scripts
+
 Only educational simulations
 
-The goal is awareness, not exploitation.
+Use only in controlled environments for ethical learning.
 
-📘 7. Learning Outcomes Summary
-
-By completing this lab, students will learn:
-
-✔ Social engineering and phishing concepts
-✔ Local website hosting
-✔ Reconnaissance techniques (Nmap, Gobuster)
-✔ Risks of downloading unknown files
-✔ Reverse-shell behavior
-✔ How attackers think
-✔ How to protect systems
-
-🏁 8. Credits
-
+👤 Credits
 Developed by Maruf Farhan
 For cybersecurity education and awareness.
 
-Use responsibly and ethically.
