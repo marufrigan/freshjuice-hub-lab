@@ -43,7 +43,6 @@ In this lab, you will learn:
 - ✔ How malware callbacks / reverse shells work (simulation only)  
 - ✔ How to protect yourself from these attacks  
 
----
 
 # 🖥️ 2. How to Run This Lab (Windows / Mac / Linux)
 
@@ -52,7 +51,8 @@ In this lab, you will learn:
 ### Option A (Recommended)
 
 git clone https://github.com/marufrigan/freshjuice-hub-lab.git
-Option B
+
+**Option B**
 Click Code → Download ZIP
 
 Extract the ZIP
@@ -60,6 +60,7 @@ Extract the ZIP
 Step 2 — Enter the Project Folder
 
 cd freshjuice-hub-lab
+
 Step 3 — Start the Local Web Server
 
 Windows / Mac / Linux:
@@ -69,6 +70,7 @@ If Python is installed as python:
 
 
 python -m http.server 8080
+
 Step 4 — Open Website in Your Browser
 Visit:
 
